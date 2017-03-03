@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Progressions!!</title>
+	<script type="text/javascript">
+		function arithmaticP(){
+			var a=document.getElementById("firstNum").value;
+			var d=document.getElementById("difference").value;
+			var b=document.getElementById("term").value;
+			if(a=="" || b=="" || d==""){
+				alert("Fill all the fields in order to get progression!!!");
+			}
+			else{
+			var x=parseInt(a);
+			var y=parseInt(d);
+			var z=parseInt(b);
+			var t;
+			var n=1;
+			var arr=[];
+			while(z!=n-1){
+				t=(x+(n-1)*y);
+				arr[n-1]=t;
+				n++;
+			}
+			var str=arr.toString();
+			document.getElementById("apDivRes").style.display="block";
+			document.getElementById("apDivRes").innerHTML="<h3><center>Arithmatic Progression is : "+str;
+		}
+		}
+		function geometricP(){
+			var a=document.getElementById("firstNumgp").value;
+			var d=document.getElementById("ratio").value;
+			var b=document.getElementById("termgp").value;
+			if(a=="" || b=="" || d==""){
+				alert("Fill all the fields in order to get progression!!!");
+			}
+			else{
+			var x=parseInt(a);
+			var y=parseInt(d);
+			var z=parseInt(b);
+			var t;
+			var n=1;
+			var arr=[];
+			while(z!=n-1){
+				t=x*Math.pow(y,(n-1));
+				arr[n-1]=t;
+				n++;
+			}
+			var str=arr.toString();
+			document.getElementById("gpDivRes").style.display="block";
+			document.getElementById("gpDivRes").innerHTML="<h3><center>Geometric Progression is : "+str;
+		}
+		}
+	</script>
+</head>
+<body>
+<center>Apramey Bhat</center>
+<form style="font-family: comic sans MS;">
+	<div align="center" style="border:solid; border-width: 3px; margin-left: 300px; margin-right: 300px; margin-top: 30px;">
+		<h2>Arithmatic Progression</h2>
+		<table>
+			<tr>
+				<td>Enter First term of Arithmatic Progression :</td>
+				<td><input type="number" name="firstNum" id="firstNum"></td>
+			</tr>
+			<tr>
+				<td>Enter Difference :</td>
+				<td><input type="number" name="difference" id="difference"></td>
+			</tr>
+			<tr>
+				<td>Enter number of terms :</td>
+				<td><input type="number" name="term" id="term"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><center><input type="button" name="findTerms" id="findTerms" value="Find Progression" onclick="arithmaticP();"></center><br></td>
+			</tr>
+		</table>
+		<div id="apDivRes" style="display: none">
+			
+		</div>
+	</div>
+	<div align="center" style="border:solid; border-width: 3px; margin-left: 300px; margin-right: 300px; margin-top: 50px;">
+		<h2>Geometric Progression</h2>
+		<table>
+			<tr>
+				<td>Enter First term of Geometric Progression :</td>
+				<td><input type="number" name="firstNumgp" id="firstNumgp"></td>
+			</tr>
+			<tr>
+				<td>Enter Common Ratio :</td>
+				<td><input type="number" name="ratio" id="ratio"></td>
+			</tr>
+			<tr>
+				<td>Enter number of terms :</td>
+				<td><input type="number" name="termgp" id="termgp"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><center><input type="button" name="findTerms" id="findTerms" value="Find Progression" onclick="geometricP();"></center><br></td>
+			</tr>
+		</table>
+		<div id="gpDivRes" style="display: none">
+			
+		</div>
+	</div>
+	<br>
+	<center><input type="button" name="reset" value="reset" onclick="window.location.reload();"></center>
+</form>
+</body>
+</html>
